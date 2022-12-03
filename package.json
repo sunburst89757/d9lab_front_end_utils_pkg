@@ -7,7 +7,10 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "npm run clean && rollup -c"
+    "build": "npm run clean && rollup -c",
+    "prepare": "husky install",
+    "lint": "eslint --ext .ts",
+    "commit": "cz"
   },
   "keywords": [],
   "author": "",
@@ -15,11 +18,23 @@
   "devDependencies": {
     "@rollup/plugin-terser": "^0.1.0",
     "@rollup/plugin-typescript": "^10.0.1",
+    "commitizen": "^4.2.5",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.29.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.0",
+    "prettier": "^2.8.0",
     "rollup": "^3.5.1",
     "tslib": "^2.4.1",
     "typescript": "^4.9.3"
   },
   "dependencies": {
     "dayjs": "^1.11.6"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

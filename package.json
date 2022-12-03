@@ -1,0 +1,25 @@
+{
+  "name": "d9lab_front_end_utils_pkg",
+  "version": "1.0.4",
+  "description": "this is a front end utils tool includes time handle caculate",
+  "main": "dist/bundle.common.js",
+  "module": "dist/bundle.es.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && rollup -c"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.1.0",
+    "@rollup/plugin-typescript": "^10.0.1",
+    "rollup": "^3.5.1",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.6"
+  }
+}

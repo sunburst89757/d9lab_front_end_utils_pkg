@@ -1,7 +1,8 @@
 import { defineConfig } from "rollup";
 import typescript from "@rollup/plugin-typescript";
 import terser from "@rollup/plugin-terser";
-import pkg from "./package.json" assert { type: "json" };
+import { readFileSync } from "fs";
+const pkg = JSON.parse(readFileSync("./package.json"));
 const external = [...Object.keys(pkg.dependencies || {})].map((name) =>
   RegExp(`^${name}($|/)`)
 );
@@ -10,13 +11,13 @@ export default defineConfig({
   output: [
     {
       file: "./dist/bundle.es.mjs",
-      format: "es",
+      format: "es"
     },
     {
       file: "./dist/bundle.common.js",
-      format: "cjs",
-    },
+      format: "cjs"
+    }
   ],
   external,
-  plugins: [typescript(), terser()],
+  plugins: [typescript(), terser()]
 });
